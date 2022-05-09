@@ -1,5 +1,5 @@
 @extends('layouts.default')
-
+@include('layouts.partials.navbar')
 @section('content')
     <section>
     <div class="container mt-5">
@@ -9,7 +9,7 @@
                 <a href="{{url('create')}}" class="btn btn-primary">Tambah Data</a>
             </div>
 
-            <div class="col-lg-8 mt-5">
+            
                 <table class="table-bordered">
                     <tr>
                         <th>Tanggal</th>
