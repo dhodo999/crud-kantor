@@ -10,6 +10,7 @@ class Kas extends Model
     use HasFactory;
 
     protected $table = 'kaskantor';
+    protected $primarykey = 'id';
     protected $fillable = [
         'tanggal',
         'saldo',

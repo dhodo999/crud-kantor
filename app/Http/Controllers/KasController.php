@@ -15,7 +15,7 @@ class KasController extends Controller
     public function index()
     {
         $data = Kas::all();
-        return view('indexkas')->with([
+        return view('Kas/indexkas')->with([
             'data' => $data
         ]);
     }
@@ -27,7 +27,7 @@ class KasController extends Controller
      */
     public function create()
     {
-        return view('createkas');
+        return view('Kas/createkas');
     }
 
     /**
@@ -53,7 +53,7 @@ class KasController extends Controller
     public function show($id)
     {
         $data = Kas::findOrFail($id);
-        return view('showkas')->with([
+        return view('Kas/showkas')->with([
             'data' => $data
         ]);
     }

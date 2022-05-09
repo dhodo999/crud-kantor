@@ -14,10 +14,7 @@ use App\Http\Controllers\KasController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
+// Route Kas
 
 Route::get('/', [KasController::class, 'index']);
 Route::get('/create', [KasController::class, 'create']);
@@ -25,3 +22,23 @@ Route::post('/store', [KasController::class, 'store']);
 Route::get('/show/{id}', [KasController::class, 'show']);
 Route::post('/update/{id}', [KasController::class, 'update']);
 Route::get('/destroy/{id}', [KasController::class, 'destroy']);
+
+// Route Karyawan
+
+
+
+
+
+
+
+
+// Route Pengeluaran
+
+
+
+
+
+
+
+
+// Route Laptop
