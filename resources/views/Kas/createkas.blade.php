@@ -6,7 +6,7 @@
             <h1>Create <b>Data</b></h1>
             <div class="row">
                 <div class="col-lg-8">
-                    <form action="{{url('/store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{url('store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="tanggal">Tanggal</label>
@@ -28,7 +28,7 @@
                             <button type="submit" class="btn btn-primary">Tambah Data Kas</button>
                         </div>
                         <div class="form-group mt-2">
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="{{url('/')}}" role="button" aria-expanded="false" aria-controls="collapseExample">Back</a>
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="{{url('/kas')}}" role="button" aria-expanded="false" aria-controls="collapseExample">Back</a>
                         </div>
                     </form>
                 </div>

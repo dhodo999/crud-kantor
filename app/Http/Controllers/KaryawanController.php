@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kas;
+use App\Models\Karyawan;
 
-class KasController extends Controller
+class KaryawanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index2()
     {
-        $data = Kas::all();
-        return view('Kas/indexkas')->with([
+        $data = Karyawan::all();
+        return view('Karyawan/indexkaryawan')->with([
             'data' => $data
         ]);
     }
@@ -25,9 +25,9 @@ class KasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create2()
     {
-        return view('Kas/createkas');
+        return view('Karyawan/createkaryawan');
     }
 
     /**
@@ -36,12 +36,11 @@ class KasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store2(Request $request)
     {
         $data = $request->except(['_token']);
-        Kas::insert($data);
-        return redirect('/kas');
-
+        Karyawan::insert($data);
+        return redirect('/karyawan');
     }
 
     /**
@@ -50,10 +49,10 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show2($id)
     {
-        $data = Kas::findOrFail($id);
-        return view('Kas/showkas')->with([
+        $data = Karyawan::findOrFail($id);
+        return view('Karyawan/showkaryawan')->with([
             'data' => $data
         ]);
     }
@@ -64,7 +63,7 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit2($id)
     {
         //
     }
@@ -76,12 +75,12 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update2(Request $request, $id)
     {
-        $kas = Kas::findOrFail($id);
+        $karyawan = Karyawan::findOrFail($id);
         $data = $request->except(['_token']);
-        $kas->update($data);
-        return redirect('/kas');
+        $karyawan->update($data);
+        return redirect('/karyawan');
     }
 
     /**
@@ -90,10 +89,10 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy2($id)
     {
-        $kas = Kas::findOrFail($id);
-        $kas->delete();
-        return redirect('/kas');
+        $karyawan = Karyawan::findOrFail($id);
+        $karyawan->delete();
+        return redirect('/karyawan');
     }
 }

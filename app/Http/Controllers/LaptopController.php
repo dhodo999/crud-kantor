@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kas;
+use App\Models\Laptop;
 
-class KasController extends Controller
+class LaptopController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index3()
     {
-        $data = Kas::all();
-        return view('Kas/indexkas')->with([
+        $data = Laptop::all();
+        return view('Laptop/indexlaptop')->with([
             'data' => $data
         ]);
     }
@@ -25,9 +25,9 @@ class KasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create3()
     {
-        return view('Kas/createkas');
+        return view('Laptop/createlaptop');
     }
 
     /**
@@ -36,12 +36,11 @@ class KasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store3(Request $request)
     {
         $data = $request->except(['_token']);
-        Kas::insert($data);
-        return redirect('/kas');
-
+        Laptop::insert($data);
+        return redirect('/laptop');
     }
 
     /**
@@ -50,10 +49,10 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show3($id)
     {
-        $data = Kas::findOrFail($id);
-        return view('Kas/showkas')->with([
+        $data = Laptop::findOrFail($id);
+        return view('Laptop/showlaptop')->with([
             'data' => $data
         ]);
     }
@@ -64,7 +63,7 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit3($id)
     {
         //
     }
@@ -76,12 +75,12 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update3(Request $request, $id)
     {
-        $kas = Kas::findOrFail($id);
+        $laptop = Laptop::findOrFail($id);
         $data = $request->except(['_token']);
-        $kas->update($data);
-        return redirect('/kas');
+        $laptop->update($data);
+        return redirect('/laptop');
     }
 
     /**
@@ -90,10 +89,10 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy3($id)
     {
-        $kas = Kas::findOrFail($id);
-        $kas->delete();
-        return redirect('/kas');
+        $laptop = Laptop::findOrFail($id);
+        $laptop->delete();
+        return redirect('/laptop');
     }
 }

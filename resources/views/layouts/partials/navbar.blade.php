@@ -7,16 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Kas</a>
+            <a class="nav-link " aria-current="page" href="/kas">Kas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pengeluaran</a>
+            <a class="nav-link " href="/pengeluaran">Pengeluaran</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Karyawan</a>
+            <a class="nav-link " href="/karyawan">Karyawan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Laptop</a>
+            <a class="nav-link " href="/laptop">Laptop</a>
           </li>
         </ul>
       </div>

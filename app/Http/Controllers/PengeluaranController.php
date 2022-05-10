@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kas;
+use App\Models\Pengeluaran;
 
-class KasController extends Controller
+class PengeluaranController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index1()
     {
-        $data = Kas::all();
-        return view('Kas/indexkas')->with([
+        $data = Pengeluaran::all();
+        return view('Pengeluaran/indexpengeluaran')->with([
             'data' => $data
         ]);
     }
@@ -25,9 +25,9 @@ class KasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create1()
     {
-        return view('Kas/createkas');
+        return view('Pengeluaran/createpengeluaran');
     }
 
     /**
@@ -36,12 +36,11 @@ class KasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store1(Request $request)
     {
         $data = $request->except(['_token']);
-        Kas::insert($data);
-        return redirect('/kas');
-
+        Pengeluaran::insert($data);
+        return redirect('/pengeluaran');
     }
 
     /**
@@ -50,10 +49,10 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show1($id)
     {
-        $data = Kas::findOrFail($id);
-        return view('Kas/showkas')->with([
+        $data = Pengeluaran::findOrFail($id);
+        return view('Pengeluaran/showpengeluaran')->with([
             'data' => $data
         ]);
     }
@@ -64,7 +63,7 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit1($id)
     {
         //
     }
@@ -76,12 +75,12 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update1(Request $request, $id)
     {
-        $kas = Kas::findOrFail($id);
+        $pengeluaran = Pengeluaran::findOrFail($id);
         $data = $request->except(['_token']);
-        $kas->update($data);
-        return redirect('/kas');
+        $pengeluaran->update($data);
+        return redirect('/pengeluaran');
     }
 
     /**
@@ -90,10 +89,10 @@ class KasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy1($id)
     {
-        $kas = Kas::findOrFail($id);
-        $kas->delete();
-        return redirect('/kas');
+        $pengeluaran = Pengeluaran::findOrFail($id);
+        $pengeluaran->delete();
+        return redirect('/pengeluaran');
     }
 }
